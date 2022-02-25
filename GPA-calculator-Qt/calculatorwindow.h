@@ -8,6 +8,7 @@
 #include"algorithm.h"
 #include"course.h"
 #include<QFile>
+#include<QTranslator>
 #include"QTableView"
 QT_BEGIN_NAMESPACE
 namespace Ui { class CalculatorWindow; }
@@ -37,12 +38,15 @@ private slots:
     void on_Delete_clicked();
 
 
+    void on_comboBox_2_currentIndexChanged(int index);
+
 private:
     Ui::CalculatorWindow *ui;
     transcript trans;
     QStandardItemModel *model = new QStandardItemModel();
     alg_name type;
-
+    QTranslator tran;
+    QApplication *qApp;
     void Update_Transcript();
 };
 #endif // CALCULATORWINDOW_H

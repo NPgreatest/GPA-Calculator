@@ -24,8 +24,9 @@ HEADERS += \
 FORMS += \
     calculatorwindow.ui
 
-TRANSLATIONS += \
-    GPA-calculator-Qt_en_US.ts
+
+
+
 CONFIG += lrelease
 CONFIG += embed_translations
 
@@ -34,3 +35,7 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
+RESOURCES += \
+    translator.qrc \
+
+TRANSLATIONS  =  tr_zh.ts tr_en.ts

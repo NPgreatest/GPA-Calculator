@@ -9,6 +9,8 @@ enum alg_name{
 
 };
 
+
+
 class algorithm
 {
 public:

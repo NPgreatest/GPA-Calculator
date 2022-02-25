@@ -155,3 +155,15 @@ void CalculatorWindow::on_Delete_clicked()
 }
 
 
+
+void CalculatorWindow::on_comboBox_2_currentIndexChanged(int index)
+{
+    switch (index) {
+    case 0:tran.load(":/tr_en.qm");break;
+    case 1:tran.load(":/tr_zh.qm");break;
+    }
+    qApp->installTranslator(&tran);
+    ui->retranslateUi(this);
+    Update_Transcript();
+}
+
