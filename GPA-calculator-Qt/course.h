@@ -28,15 +28,7 @@ public:
     double Get_Score(){return score;}
     int Get_Number(){return number;}
     QString Get_Name(){return name;}
-    double Get_point(alg_name type){
-        return algorithm::GetPoint(type,this->score);
-    }
-    QString Get_grade(alg_name type){
-        return algorithm::GetGrade(type,this->score);
-    }
-    double Get_Credit(alg_name type){
-        return algorithm::GetCredit(type,this->credit,this->Is_politic);
-    }
+
 };
 
 #endif // COURSE_H

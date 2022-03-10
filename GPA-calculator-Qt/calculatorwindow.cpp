@@ -1,22 +1,41 @@
 #include "calculatorwindow.h"
 #include "ui_calculatorwindow.h"
-
+#include <QCoreApplication>
 CalculatorWindow::CalculatorWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::CalculatorWindow)
 {
     ui->setupUi(this);
 
+    double a,b,c;
+    QString d;
+    QDir directory("Algorithm");
+    QStringList list = directory.entryList(QStringList() << "*.txt" << "*.TXT",QDir::Files);
+    foreach(QString filename, list) {
 
-    trans.Change_Mod(alg_name::ECUST);
+        QFile file(QDir::currentPath()+"/Algorithm/"+filename);
+        if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
+            QMessageBox::about(NULL,  "Oops",  "Can not open file");
+              return;
+        }
+        QTextStream in(&file);
+        alg.push_back(0);
+        while (!in.atEnd()) {
+            in>>a;
+            in>>b;
+            in>>c;
+            in>>d;
 
+            Range t(a,b,c,d);
 
+            (alg.end()-1)->Add_Range(t);
 
-
-
-
-
-
+        }
+        ui->comboBox->addItem(filename.left(filename.size()-4));
+        if(filename.left(filename.size()-4)=="WES") (alg.end()-1)->WES=1;
+        file.close();
+    }
+    calg=alg[0];
 
 }
 
@@ -38,10 +57,18 @@ void CalculatorWindow::on_P_transcript_clicked()
     double credit;
     int Is_politic;
     int Is_retake;
+    QMessageBox::about(NULL,  "Tips",  "The Transcript File should according to This format:\n"
+                                       "CourseName Credit Score IsPolitic(0-1) IsRetake(0-1)\n"
+                                       "Do not put space on Coursename!!!\n"
+                                       "Example:\n\n"
+                                        "Advanced-Mathematics 5 73 0 0\n\n"
+                                       "All retake course should input before initial course\nExample:\n\n"
+                                       "Advanced-Mathematics 6 98 0 1\n"
+                                       "Advanced-Mathematics 6 70 0 0\n");
     QString Address = QFileDialog::getOpenFileName(this, tr("Choose Transcript"), nullptr, tr("Transcript Files (*.txt)"));
     QFile file(Address);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-        qDebug()<<"Open File filed";
+        QMessageBox::about(NULL,  "Oops",  "Can not open file");
           return;
     }
     QTextStream in(&file);
@@ -68,22 +95,10 @@ void CalculatorWindow::on_P_transcript_clicked()
 void CalculatorWindow::on_comboBox_currentIndexChanged(int index)
 {
 
-    switch (index) {
-    case 0:type=alg_name::ECUST;break;
-    case 1:type=alg_name::WES;break;
-    case 2:type=alg_name::PKU;break;
-    case 3:type=alg_name::S4;break;
-    case 4:type=alg_name::S4_New;break;
-    case 5:type=alg_name::USTC;break;
-    case 6:type=alg_name::SJTU;break;
-    case 7:type=alg_name::Canada;break;
-    }
-    trans.Change_Mod(type);
+    calg=alg[index];
 
     Update_Transcript();
 }
-
-
 
 
 
@@ -119,10 +134,10 @@ void CalculatorWindow::Update_Transcript(){
     for(int i=0;i<trans.cor.size();i++){
         model->setItem(i,0,new QStandardItem(QString::number(trans.cor[i].Get_Number())));
         model->setItem(i,1,new QStandardItem(trans.cor[i].Get_Name()));
-        model->setItem(i,2,new QStandardItem(QString::number(trans.cor[i].Get_Credit(trans.type))));
+        model->setItem(i,2,new QStandardItem(QString::number((calg.WES? trans.cor[i].Is_politic?0:trans.cor[i].credit:trans.cor[i].credit))));
         model->setItem(i,3,new QStandardItem(QString::number(trans.cor[i].Get_Score())));
-        model->setItem(i,4,new QStandardItem(QString::number(trans.cor[i].Get_point(trans.type))));
-        model->setItem(i,5,new QStandardItem(trans.cor[i].Get_grade(trans.type)));
+        model->setItem(i,4,new QStandardItem(QString::number(calg.Get_Point(trans.cor[i].Get_Score()))));
+        model->setItem(i,5,new QStandardItem(calg.Get_Grade(trans.cor[i].Get_Score())));
         if(trans.cor[i].Is_retake){
             model->setItem(i,0,new QStandardItem("R*"));
             for(int k=0;k<6;k++){
@@ -131,10 +146,10 @@ void CalculatorWindow::Update_Transcript(){
             }
         }
     }
-    ui->IGPA->setText(QString::number( trans.Get_Initial_GPA()));
-    ui->OGPA->setText(QString::number( trans.Get_OverAll_GPA()));
-    ui->IScore->setText(QString::number( trans.Get_Inital_Score()));
-    ui->OScore->setText(QString::number( trans.Get_OverAll_Score()));
+    ui->IGPA->setText(QString::number( trans.Get_Initial_GPA(calg)));
+    ui->OGPA->setText(QString::number( trans.Get_OverAll_GPA(calg)));
+    ui->IScore->setText(QString::number( trans.Get_Inital_Score(calg)));
+    ui->OScore->setText(QString::number( trans.Get_OverAll_Score(calg)));
 
 }
 
@@ -165,5 +180,11 @@ void CalculatorWindow::on_comboBox_2_currentIndexChanged(int index)
     qApp->installTranslator(&tran);
     ui->retranslateUi(this);
     Update_Transcript();
+}
+
+
+void CalculatorWindow::on_pushButton_clicked()
+{
+    QMessageBox::about(NULL,  "Tips",  "Put Your Algorithm txt to Algorithm file\n");
 }
 

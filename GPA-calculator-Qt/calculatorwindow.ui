@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1361</width>
+    <width>1394</width>
     <height>1023</height>
    </rect>
   </property>
@@ -156,8 +156,8 @@
    <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
-      <x>1090</x>
-      <y>90</y>
+      <x>1100</x>
+      <y>120</y>
       <width>261</width>
       <height>41</height>
      </rect>
@@ -166,7 +166,7 @@
      <bool>false</bool>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>-1</number>
     </property>
     <property name="maxCount">
      <number>100</number>
@@ -174,52 +174,12 @@
     <property name="minimumContentsLength">
      <number>5</number>
     </property>
-    <item>
-     <property name="text">
-      <string>ECUST</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>WES</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>BKU</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Standard_4.0</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Standard_4.0_New</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>USTC</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>SJTU</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Canada</string>
-     </property>
-    </item>
    </widget>
    <widget class="QPushButton" name="Add1">
     <property name="geometry">
      <rect>
       <x>1080</x>
-      <y>210</y>
+      <y>290</y>
       <width>281</width>
       <height>61</height>
      </rect>
@@ -245,7 +205,7 @@
     <property name="geometry">
      <rect>
       <x>1080</x>
-      <y>270</y>
+      <y>350</y>
       <width>281</width>
       <height>61</height>
      </rect>
@@ -258,7 +218,7 @@
     <property name="geometry">
      <rect>
       <x>1270</x>
-      <y>340</y>
+      <y>420</y>
       <width>91</width>
       <height>61</height>
      </rect>
@@ -271,7 +231,7 @@
     <property name="geometry">
      <rect>
       <x>1090</x>
-      <y>340</y>
+      <y>420</y>
       <width>51</width>
       <height>21</height>
      </rect>
@@ -284,7 +244,7 @@
     <property name="geometry">
      <rect>
       <x>1090</x>
-      <y>370</y>
+      <y>450</y>
       <width>51</width>
       <height>21</height>
      </rect>
@@ -297,7 +257,7 @@
     <property name="geometry">
      <rect>
       <x>1150</x>
-      <y>340</y>
+      <y>420</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -325,7 +285,7 @@
     <property name="geometry">
      <rect>
       <x>1150</x>
-      <y>370</y>
+      <y>450</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -341,7 +301,7 @@
     <property name="geometry">
      <rect>
       <x>1270</x>
-      <y>400</y>
+      <y>480</y>
       <width>91</width>
       <height>51</height>
      </rect>
@@ -354,7 +314,7 @@
     <property name="geometry">
      <rect>
       <x>1150</x>
-      <y>410</y>
+      <y>490</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -370,7 +330,7 @@
     <property name="geometry">
      <rect>
       <x>1090</x>
-      <y>410</y>
+      <y>490</y>
       <width>51</width>
       <height>21</height>
      </rect>
@@ -426,13 +386,39 @@
 https://github.com/NPgreatest/GPA-Calculator/</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>1090</x>
+      <y>100</y>
+      <width>161</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Algorithm:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>1100</x>
+      <y>160</y>
+      <width>261</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Add Algorithm</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1361</width>
+     <width>1394</width>
      <height>25</height>
     </rect>
    </property>

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include<QStandardItemModel>
+#include<QMessageBox>
 #include<QFileDialog>
 #include"transcript.h"
 #include"algorithm.h"
@@ -40,11 +41,15 @@ private slots:
 
     void on_comboBox_2_currentIndexChanged(int index);
 
+    void on_pushButton_clicked();
+
 private:
     Ui::CalculatorWindow *ui;
     transcript trans;
     QStandardItemModel *model = new QStandardItemModel();
-    alg_name type;
+
+    QVector<algorithm> alg;
+    algorithm calg;
     QTranslator tran;
     QApplication *qApp;
     void Update_Transcript();

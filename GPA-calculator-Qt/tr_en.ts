@@ -42,103 +42,79 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="calculatorwindow.ui" line="179"/>
-        <source>ECUST</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="calculatorwindow.ui" line="184"/>
-        <source>WES</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="calculatorwindow.ui" line="189"/>
-        <source>BKU</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="calculatorwindow.ui" line="194"/>
-        <source>Standard_4.0</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="calculatorwindow.ui" line="199"/>
-        <source>Standard_4.0_New</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="calculatorwindow.ui" line="204"/>
-        <source>USTC</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="calculatorwindow.ui" line="209"/>
-        <source>SJTU</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="calculatorwindow.ui" line="214"/>
-        <source>Canada</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="calculatorwindow.ui" line="228"/>
+        <location filename="calculatorwindow.ui" line="188"/>
         <source>Add 3 Credit 4.0 Course</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="calculatorwindow.ui" line="241"/>
+        <location filename="calculatorwindow.ui" line="201"/>
         <source>Del</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="calculatorwindow.ui" line="254"/>
+        <location filename="calculatorwindow.ui" line="214"/>
         <source>Add 2 Credit 4.0 Course</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="calculatorwindow.ui" line="267"/>
+        <location filename="calculatorwindow.ui" line="227"/>
         <source>Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="calculatorwindow.ui" line="280"/>
+        <location filename="calculatorwindow.ui" line="240"/>
         <source>Credit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="calculatorwindow.ui" line="293"/>
-        <location filename="calculatorwindow.ui" line="379"/>
+        <location filename="calculatorwindow.ui" line="253"/>
+        <location filename="calculatorwindow.ui" line="339"/>
         <source>Score</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="calculatorwindow.ui" line="350"/>
+        <location filename="calculatorwindow.ui" line="310"/>
         <source>Retake</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="calculatorwindow.ui" line="392"/>
+        <location filename="calculatorwindow.ui" line="352"/>
         <source>Language:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="calculatorwindow.ui" line="406"/>
+        <location filename="calculatorwindow.ui" line="366"/>
         <source>English</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="calculatorwindow.ui" line="411"/>
+        <location filename="calculatorwindow.ui" line="371"/>
         <source>简体中文</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="calculatorwindow.cpp" line="41"/>
+        <location filename="calculatorwindow.ui" line="385"/>
+        <source>作者:NP_123
+https://github.com/NPgreatest/GPA-Calculator/</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="calculatorwindow.ui" line="399"/>
+        <source>Algorithm:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="calculatorwindow.ui" line="412"/>
+        <source>Add Algorithm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="calculatorwindow.cpp" line="69"/>
         <source>Choose Transcript</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="calculatorwindow.cpp" line="41"/>
+        <location filename="calculatorwindow.cpp" line="69"/>
         <source>Transcript Files (*.txt)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -146,32 +122,32 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="calculatorwindow.cpp" line="112"/>
+        <location filename="calculatorwindow.cpp" line="130"/>
         <source>Number</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="calculatorwindow.cpp" line="113"/>
+        <location filename="calculatorwindow.cpp" line="131"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="calculatorwindow.cpp" line="114"/>
+        <location filename="calculatorwindow.cpp" line="132"/>
         <source>Credit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="calculatorwindow.cpp" line="115"/>
+        <location filename="calculatorwindow.cpp" line="133"/>
         <source>Score</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="calculatorwindow.cpp" line="116"/>
+        <location filename="calculatorwindow.cpp" line="134"/>
         <source>Point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="calculatorwindow.cpp" line="117"/>
+        <location filename="calculatorwindow.cpp" line="135"/>
         <source>Grade</source>
         <translation type="unfinished"></translation>
     </message>
