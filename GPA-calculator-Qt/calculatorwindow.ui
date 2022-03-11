@@ -6,438 +6,492 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1361</width>
-    <height>1023</height>
+    <width>1418</width>
+    <height>898</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>CalculatorWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="P_transcript">
-    <property name="geometry">
-     <rect>
-      <x>1090</x>
-      <y>0</y>
-      <width>211</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PrintTranscript</string>
-    </property>
-   </widget>
-   <widget class="QTableView" name="TranscriptView">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>1071</width>
-      <height>881</height>
-     </rect>
-    </property>
-    <property name="editTriggers">
-     <set>QAbstractItemView::NoEditTriggers</set>
-    </property>
-    <property name="alternatingRowColors">
-     <bool>true</bool>
-    </property>
-    <property name="textElideMode">
-     <enum>Qt::ElideRight</enum>
-    </property>
-    <attribute name="verticalHeaderVisible">
-     <bool>false</bool>
-    </attribute>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>890</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Initial GPA:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>920</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Initial Score:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>890</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Overall GPA:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>920</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Overall Score:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="IGPA">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>890</y>
-      <width>201</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="IScore">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>920</y>
-      <width>201</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="OGPA">
-    <property name="geometry">
-     <rect>
-      <x>480</x>
-      <y>890</y>
-      <width>201</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="OScore">
-    <property name="geometry">
-     <rect>
-      <x>500</x>
-      <y>920</y>
-      <width>201</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBox">
-    <property name="geometry">
-     <rect>
-      <x>1090</x>
-      <y>90</y>
-      <width>261</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="editable">
-     <bool>false</bool>
-    </property>
-    <property name="currentIndex">
-     <number>0</number>
-    </property>
-    <property name="maxCount">
-     <number>100</number>
-    </property>
-    <property name="minimumContentsLength">
-     <number>5</number>
-    </property>
+   <layout class="QVBoxLayout" name="verticalLayout_6">
     <item>
-     <property name="text">
-      <string>ECUST</string>
-     </property>
+     <widget class="QSplitter" name="splitter_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="handleWidth">
+       <number>0</number>
+      </property>
+      <widget class="QSplitter" name="splitter">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="lineWidth">
+        <number>20</number>
+       </property>
+       <property name="midLineWidth">
+        <number>10</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="opaqueResize">
+        <bool>true</bool>
+       </property>
+       <property name="handleWidth">
+        <number>5</number>
+       </property>
+       <property name="childrenCollapsible">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="LeftWidget" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QTableView" name="TranscriptView">
+           <property name="editTriggers">
+            <set>QAbstractItemView::NoEditTriggers</set>
+           </property>
+           <property name="alternatingRowColors">
+            <bool>true</bool>
+           </property>
+           <property name="textElideMode">
+            <enum>Qt::ElideRight</enum>
+           </property>
+           <attribute name="verticalHeaderVisible">
+            <bool>false</bool>
+           </attribute>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="RightWidget" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <layout class="QGridLayout" name="gridLayout_2">
+             <item row="1" column="0" colspan="3">
+              <widget class="QComboBox" name="comboBox">
+               <property name="editable">
+                <bool>false</bool>
+               </property>
+               <property name="currentIndex">
+                <number>-1</number>
+               </property>
+               <property name="maxCount">
+                <number>100</number>
+               </property>
+               <property name="minimumContentsLength">
+                <number>5</number>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_5">
+               <property name="text">
+                <string>Credit</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <layout class="QVBoxLayout" name="verticalLayout">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+              </layout>
+             </item>
+             <item row="5" column="0">
+              <widget class="QPushButton" name="pushButton">
+               <property name="text">
+                <string>Mark as Major Course</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <spacer name="verticalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Minimum</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>22</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item row="11" column="0">
+              <widget class="QLabel" name="label_7">
+               <property name="text">
+                <string>Score</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QDoubleSpinBox" name="CreditBox">
+               <property name="prefix">
+                <string/>
+               </property>
+               <property name="suffix">
+                <string/>
+               </property>
+               <property name="decimals">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <double>100.000000000000000</double>
+               </property>
+               <property name="singleStep">
+                <double>0.500000000000000</double>
+               </property>
+               <property name="value">
+                <double>1.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="1" colspan="2">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox">
+               <property name="decimals">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <double>100.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="0">
+              <widget class="QPushButton" name="pushButton_3">
+               <property name="text">
+                <string>Mark as Useless Coursse</string>
+               </property>
+              </widget>
+             </item>
+             <item row="11" column="1">
+              <widget class="QDoubleSpinBox" name="ScoreBox2">
+               <property name="decimals">
+                <number>1</number>
+               </property>
+               <property name="value">
+                <double>90.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="2" rowspan="2">
+              <widget class="QPushButton" name="Add3">
+               <property name="text">
+                <string>Add</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="label_6">
+               <property name="text">
+                <string>Score</string>
+               </property>
+              </widget>
+             </item>
+             <item row="11" column="2">
+              <widget class="QPushButton" name="Retake">
+               <property name="text">
+                <string>Retake</string>
+               </property>
+              </widget>
+             </item>
+             <item row="10" column="1">
+              <spacer name="verticalSpacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item row="4" column="1">
+              <widget class="QDoubleSpinBox" name="ScoreBox">
+               <property name="decimals">
+                <number>1</number>
+               </property>
+               <property name="value">
+                <double>90.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_10">
+               <property name="text">
+                <string>Algorithm:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="0">
+              <widget class="QPushButton" name="pushButton_4">
+               <property name="text">
+                <string>Mark as taken</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="1" colspan="2">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+               <property name="decimals">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <double>100.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="0">
+              <widget class="QPushButton" name="pushButton_2">
+               <property name="text">
+                <string>Mark as Pending</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="BottomWidget" native="true">
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="1" column="3">
+           <widget class="QLabel" name="OScore">
+            <property name="text">
+             <string>0</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Overall Score:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4">
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>Major GPA:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="IScore">
+            <property name="text">
+             <string>0</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Overall GPA:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="IGPA">
+            <property name="text">
+             <string>0</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Initial GPA:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Initial Score:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLabel" name="OGPA">
+            <property name="text">
+             <string>0</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="5">
+           <widget class="QLabel" name="MGPA">
+            <property name="text">
+             <string>0</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="4">
+           <widget class="QLabel" name="label_11">
+            <property name="text">
+             <string>Major Score:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="5">
+           <widget class="QLabel" name="MScore">
+            <property name="text">
+             <string>0</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
     </item>
-    <item>
-     <property name="text">
-      <string>WES</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>BKU</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Standard_4.0</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Standard_4.0_New</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>USTC</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>SJTU</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Canada</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QPushButton" name="Add1">
-    <property name="geometry">
-     <rect>
-      <x>1080</x>
-      <y>210</y>
-      <width>281</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Add 3 Credit 4.0 Course</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Delete">
-    <property name="geometry">
-     <rect>
-      <x>1300</x>
-      <y>0</y>
-      <width>51</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Del</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Add2">
-    <property name="geometry">
-     <rect>
-      <x>1080</x>
-      <y>270</y>
-      <width>281</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Add 2 Credit 4.0 Course</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Add3">
-    <property name="geometry">
-     <rect>
-      <x>1270</x>
-      <y>340</y>
-      <width>91</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Add</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>1090</x>
-      <y>340</y>
-      <width>51</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Credit</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_6">
-    <property name="geometry">
-     <rect>
-      <x>1090</x>
-      <y>370</y>
-      <width>51</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Score</string>
-    </property>
-   </widget>
-   <widget class="QDoubleSpinBox" name="CreditBox">
-    <property name="geometry">
-     <rect>
-      <x>1150</x>
-      <y>340</y>
-      <width>111</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="prefix">
-     <string/>
-    </property>
-    <property name="suffix">
-     <string/>
-    </property>
-    <property name="decimals">
-     <number>1</number>
-    </property>
-    <property name="maximum">
-     <double>100.000000000000000</double>
-    </property>
-    <property name="singleStep">
-     <double>0.500000000000000</double>
-    </property>
-    <property name="value">
-     <double>1.000000000000000</double>
-    </property>
-   </widget>
-   <widget class="QDoubleSpinBox" name="ScoreBox">
-    <property name="geometry">
-     <rect>
-      <x>1150</x>
-      <y>370</y>
-      <width>111</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="decimals">
-     <number>1</number>
-    </property>
-    <property name="value">
-     <double>90.000000000000000</double>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Retake">
-    <property name="geometry">
-     <rect>
-      <x>1270</x>
-      <y>400</y>
-      <width>91</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Retake</string>
-    </property>
-   </widget>
-   <widget class="QDoubleSpinBox" name="ScoreBox2">
-    <property name="geometry">
-     <rect>
-      <x>1150</x>
-      <y>410</y>
-      <width>111</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="decimals">
-     <number>1</number>
-    </property>
-    <property name="value">
-     <double>90.000000000000000</double>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_7">
-    <property name="geometry">
-     <rect>
-      <x>1090</x>
-      <y>410</y>
-      <width>51</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Score</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_8">
-    <property name="geometry">
-     <rect>
-      <x>1100</x>
-      <y>840</y>
-      <width>91</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Language:</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBox_2">
-    <property name="geometry">
-     <rect>
-      <x>1190</x>
-      <y>840</y>
-      <width>131</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string>English</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>简体中文</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QLabel" name="label_9">
-    <property name="geometry">
-     <rect>
-      <x>980</x>
-      <y>900</y>
-      <width>361</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>作者:NP_123
-https://github.com/NPgreatest/GPA-Calculator/</string>
-    </property>
-   </widget>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1361</width>
+     <width>1418</width>
      <height>25</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="action_3"/>
+    <addaction name="actionDelete_Transcript"/>
+    <addaction name="action_4"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Settings</string>
+    </property>
+    <widget class="QMenu" name="menu_language">
+     <property name="tearOffEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="title">
+      <string>Language</string>
+     </property>
+     <property name="separatorsCollapsible">
+      <bool>false</bool>
+     </property>
+     <addaction name="action_zh"/>
+     <addaction name="action_English"/>
+    </widget>
+    <addaction name="menu_language"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="action_6"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <widget class="QMenu" name="menuAdd_Course">
+     <property name="title">
+      <string>Add Course</string>
+     </property>
+     <addaction name="actionAdd_a_3_Credit_95_Score_Course"/>
+     <addaction name="actionAdd_a_2_Credit_95_Score_Course"/>
+     <addaction name="actionAdd_a_2_Credit_89_Score_Course"/>
+     <addaction name="actionAdd_a_3_Credit_89_Score_Course"/>
+    </widget>
+    <addaction name="menuAdd_Course"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_4"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_zh">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>简体中文</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::WindowShortcut</enum>
+   </property>
+   <property name="visible">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="action_English">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>English</string>
+   </property>
+  </action>
+  <action name="action_3">
+   <property name="text">
+    <string>Open Transcript</string>
+   </property>
+  </action>
+  <action name="action_4">
+   <property name="text">
+    <string>Add Algorithm</string>
+   </property>
+  </action>
+  <action name="action_6">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionAdd_a_3_Credit_95_Score_Course">
+   <property name="text">
+    <string>Add a 3 Credit 95 Score Course</string>
+   </property>
+  </action>
+  <action name="actionAdd_a_2_Credit_95_Score_Course">
+   <property name="text">
+    <string>Add a 2 Credit 95 Score Course</string>
+   </property>
+  </action>
+  <action name="actionAdd_a_2_Credit_89_Score_Course">
+   <property name="text">
+    <string>Add a 2 Credit 89 Score Course</string>
+   </property>
+  </action>
+  <action name="actionAdd_a_3_Credit_89_Score_Course">
+   <property name="text">
+    <string>Add a 3 Credit 89 Score Course</string>
+   </property>
+  </action>
+  <action name="actionDelete_Transcript">
+   <property name="text">
+    <string>Delete Transcript</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
