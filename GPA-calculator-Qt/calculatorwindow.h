@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include<QStandardItemModel>
+#include<QMessageBox>
 #include<QFileDialog>
 #include"transcript.h"
 #include"algorithm.h"
@@ -10,6 +11,8 @@
 #include<QFile>
 #include<QTranslator>
 #include"QTableView"
+#include"addalgorithmwindow.h"
+#include"aboutwindow.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class CalculatorWindow; }
 QT_END_NAMESPACE
@@ -23,30 +26,60 @@ public:
     ~CalculatorWindow();
 
 private slots:
-    void on_P_transcript_clicked();
 
     void on_comboBox_currentIndexChanged(int index);
 
-    void on_Add1_clicked();
+    void on_Retake_clicked();
 
-    void on_Add2_clicked();
+    void on_action_zh_triggered();
+
+    void on_action_English_triggered();
+
+    void on_action_3_triggered();
+
+    void on_action_4_triggered();
+
+    void on_actionAdd_a_3_Credit_95_Score_Course_triggered();
+
+    void on_actionAdd_a_2_Credit_95_Score_Course_triggered();
+
+    void on_actionAdd_a_2_Credit_89_Score_Course_triggered();
+
+    void on_actionAdd_a_3_Credit_89_Score_Course_triggered();
+
+    void on_actionDelete_Transcript_triggered();
 
     void on_Add3_clicked();
 
-    void on_Retake_clicked();
+    void on_action_6_triggered();
 
-    void on_Delete_clicked();
+    void on_actionChange__Mode_triggered();
 
+    void on_tabWidget_currentChanged(int index);
 
-    void on_comboBox_2_currentIndexChanged(int index);
+    void on_actionCopy_triggered();
+
+    void on_actionPaste_triggered();
+
+    void on_actionRetake_Course_triggered();
+
+    void on_actionDelete_Course_triggered();
 
 private:
     Ui::CalculatorWindow *ui;
-    transcript trans;
-    QStandardItemModel *model = new QStandardItemModel();
-    alg_name type;
+    AddAlgorithmWindow *awindow;
+    AboutWindow *about;
+    QVector<QTableView*> Tables;
+    QVector<QStandardItemModel*> model;
+    QVector<transcript*> trans;
+    transcript ctran;
+    int cc=0;
+
+    QVector<algorithm> alg;
+    algorithm calg;
     QTranslator tran;
     QApplication *qApp;
+    bool edit=false;
     void Update_Transcript();
 };
 #endif // CALCULATORWINDOW_H

@@ -12,22 +12,18 @@ private:
 
 public:
     QVector<Course> cor;
-    alg_name type;
-    void Add_Course(int number,QString name,double score,double credit,bool Is_politic,bool Is_retake){
-        cor.append(Course(number,name,score,credit,Is_politic,Is_retake));
+    void Add_Course(QString name,double score,double credit){
+        cor.append(Course(name,score,credit));
     }
-    void Retake_Course(int number,int score);
+    void Retake_Course(int n,double score);
+    void Delete_Course(int n);
 
-    void Change_Mod(alg_name type){
-        this->type=type;
-    }
     void Print_Script();// for test
 
-
-    double Get_OverAll_GPA();
-    double Get_OverAll_Score();
-    double Get_Initial_GPA();
-    double Get_Inital_Score();
+    double Get_OverAll_GPA(algorithm &alg);
+    double Get_OverAll_Score(algorithm &alg);
+    double Get_Initial_GPA(algorithm &alg);
+    double Get_Inital_Score(algorithm &alg);
 
 
 };
