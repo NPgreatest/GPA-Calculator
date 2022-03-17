@@ -20,8 +20,8 @@ and all retake course should input before first course
 比如：
 
 
-大学英语Ⅱ	  2.0	67.0
-钢琴音乐赏析	  1.5	82
+大学英语Ⅱ	  2.0	67
+钢琴音乐赏析	  1.5	80
 
 重修科目放在初修之前，保持名字一致
 比如：
