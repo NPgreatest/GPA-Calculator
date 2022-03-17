@@ -20,6 +20,7 @@ struct Range{
     }
 };
 
+
 class algorithm
 {
     QString Name;

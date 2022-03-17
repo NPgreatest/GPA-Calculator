@@ -7,6 +7,7 @@
 #include<QFileDialog>
 #include"transcript.h"
 #include"algorithm.h"
+#include"settingwindow.h"
 #include"course.h"
 #include<QFile>
 #include<QTranslator>
@@ -65,21 +66,31 @@ private slots:
 
     void on_actionDelete_Course_triggered();
 
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_actionSettings_triggered();
+
 private:
+    bool isDigitString(const QString& src);
     Ui::CalculatorWindow *ui;
     AddAlgorithmWindow *awindow;
     AboutWindow *about;
+    SettingWindow *setting;
     QVector<QTableView*> Tables;
     QVector<QStandardItemModel*> model;
     QVector<transcript*> trans;
     transcript ctran;
     int cc=0;
-
+    QVector<QPair<double,QString>> r;
     QVector<algorithm> alg;
     algorithm calg;
     QTranslator tran;
     QApplication *qApp;
     bool edit=false;
     void Update_Transcript();
+    bool Update_Settings();
+    bool Update_Algorithm();
 };
 #endif // CALCULATORWINDOW_H

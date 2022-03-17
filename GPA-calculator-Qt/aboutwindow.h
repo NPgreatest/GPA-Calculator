@@ -15,6 +15,9 @@ public:
     explicit AboutWindow(QWidget *parent = nullptr);
     ~AboutWindow();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::AboutWindow *ui;
 };

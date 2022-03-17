@@ -16,6 +16,7 @@ SOURCES += \
     course.cpp \
     main.cpp \
     calculatorwindow.cpp \
+    settingwindow.cpp \
     transcript.cpp
 
 HEADERS += \
@@ -24,12 +25,14 @@ HEADERS += \
     algorithm.h \
     calculatorwindow.h \
     course.h \
+    settingwindow.h \
     transcript.h
 
 FORMS += \
     aboutwindow.ui \
     addalgorithmwindow.ui \
-    calculatorwindow.ui
+    calculatorwindow.ui \
+    settingwindow.ui
 
 
 CONFIG += lrelease
@@ -45,3 +48,5 @@ RESOURCES += \
     translator.qrc \
 
 TRANSLATIONS  =  tr_zh.ts tr_en.ts
+
+RC_ICONS = icon.ico

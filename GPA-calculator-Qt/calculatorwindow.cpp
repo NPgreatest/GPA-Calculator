@@ -8,6 +8,7 @@ CalculatorWindow::CalculatorWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+
     Tables.push_back(ui->TranscriptView);
     Tables.push_back(ui->TranscriptView_2);
     Tables.push_back(ui->TranscriptView_3);
@@ -35,39 +36,11 @@ CalculatorWindow::CalculatorWindow(QWidget *parent)
 
 
 
-    double a,b,c;
-    QString d;
-    QDir directory("Algorithm");
-    QStringList list = directory.entryList(QStringList() << "*.txt" << "*.TXT",QDir::Files);
-    foreach(QString filename, list) {
-
-        QFile file(QDir::currentPath()+"/Algorithm/"+filename);
-        if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-            QMessageBox::about(NULL,  "Oops",  "Can not open file");
-              return;
-        }
-        QTextStream in(&file);
-        alg.push_back(0);
-        while (!in.atEnd()) {
-            in>>a;
-            in>>b;
-            in>>c;
-            in>>d;
 
 
-            Range t(a,b,c,d);
+    if(!Update_Algorithm() || !Update_Settings()){
 
-            (alg.end()-1)->Add_Range(t);
-
-        }
-        ui->comboBox->addItem(filename.left(filename.size()-4));
-        if(filename.left(filename.size()-4)=="WES") (alg.end()-1)->WES=1;
-        file.close();
     }
-    calg=alg[0];
-
-
-
 
 }
 
@@ -94,6 +67,7 @@ void CalculatorWindow::on_comboBox_currentIndexChanged(int index)
 
 void CalculatorWindow::Update_Transcript(){
     model[cc]->clear();
+    Tables[cc]->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     model[cc]->setHorizontalHeaderItem(0, new QStandardItem(QObject::tr("Name")));
     model[cc]->setHorizontalHeaderItem(1, new QStandardItem(QObject::tr("Credit")));
     model[cc]->setHorizontalHeaderItem(2, new QStandardItem(QObject::tr("Score")));
@@ -120,6 +94,66 @@ void CalculatorWindow::Update_Transcript(){
     ui->IScore->setText(QString::number( trans[cc]->Get_Inital_Score(calg)));
     ui->OScore->setText(QString::number( trans[cc]->Get_OverAll_Score(calg)));
 
+}
+
+bool CalculatorWindow::Update_Settings()
+{
+    r.clear();
+    QFile file(QDir::currentPath()+"/settings.txt");
+    if(!file.open(QIODevice::ReadOnly)){
+        setting = new SettingWindow();
+        setting->show();
+        return false;
+    }
+
+    QTextStream in(&file);
+    while (!in.atEnd()) {
+        double a;QString b;
+        in>>a;
+        in>>b;
+        r.push_back(QPair<double,QString>(a,b));
+        qDebug()<<a<<b;
+    }
+    file.close();
+    return true;
+}
+
+bool CalculatorWindow::Update_Algorithm()
+{
+    if(!alg.isEmpty())return true;
+    double a,b,c;
+    QString d;
+    QDir directory("Algorithm");
+    QStringList list = directory.entryList(QStringList() << "*.txt" << "*.TXT",QDir::Files);
+    if(list.empty()){
+        awindow=new AddAlgorithmWindow();
+        awindow->show();
+        return false;
+    }
+    foreach(QString filename, list){
+        QFile file(QDir::currentPath()+"/Algorithm/"+filename);
+        if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
+            awindow=new AddAlgorithmWindow();
+            awindow->show();
+            return false;
+        }
+        QTextStream in(&file);
+        alg.push_back(0);
+        while (!in.atEnd()) {
+            in>>a;
+            in>>b;
+            in>>c;
+            in>>d;
+            Range t(a,b,c,d);
+
+            (alg.end()-1)->Add_Range(t);
+
+        }
+        ui->comboBox->addItem(filename.left(filename.size()-4));
+        file.close();
+    }
+    calg=alg[0];
+    return true;
 }
 
 void CalculatorWindow::on_Retake_clicked()
@@ -156,13 +190,12 @@ void CalculatorWindow::on_action_English_triggered()
 
 void CalculatorWindow::on_action_3_triggered()
 {
+    if(!Update_Settings() || !Update_Algorithm()) return;
     if(trans[cc]->cor.size()){
         Update_Transcript();
         return;
     }
-    QString name;
-    double score;
-    double credit;
+
 
 
     QString Address = QFileDialog::getOpenFileName(this, tr("Choose Transcript"), nullptr, tr("Transcript Files (*.txt)"));
@@ -173,14 +206,34 @@ void CalculatorWindow::on_action_3_triggered()
     }
     QTextStream in(&file);
     while (!in.atEnd()) {
+        QString name;
+        QString f_score;
+        double score;
+        double credit;
         in>>name;
         in>>credit;
-        in>>score;
+        in>>f_score;
+        if(isDigitString(f_score))
+            score=f_score.toDouble();
+        else{
+            bool f=false;
+            for(int i=0;i<r.size();i++){
+                if(f_score==r[i].second){
+                    score=r[i].first;
+                    f=1;break;
+                }
+            }
+            if(!f)score=-1;
+        }
         trans[cc]->Add_Course(name,score,credit);
     }
     Update_Transcript();
 }
-
+bool CalculatorWindow::isDigitString(const QString& src) {
+    const char *s = src.toUtf8().data();
+    while(*s && ((*s>='0' && *s<='9' )|| *s=='.'))s++;
+    return !bool(*s);
+}
 
 void CalculatorWindow::on_action_4_triggered()
 {
@@ -191,28 +244,28 @@ void CalculatorWindow::on_action_4_triggered()
 
 void CalculatorWindow::on_actionAdd_a_3_Credit_95_Score_Course_triggered()
 {
-    trans[cc]->Add_Course("Future Course "+ QString::number(QRandomGenerator::global()->bounded(1000000)),95,3);
+    trans[cc]->Add_Course("Unknown Course "+ QString::number(QRandomGenerator::global()->bounded(1000000)),95,3);
         Update_Transcript();
 }
 
 
 void CalculatorWindow::on_actionAdd_a_2_Credit_95_Score_Course_triggered()
 {
-    trans[cc]->Add_Course("Future Course "+ QString::number(QRandomGenerator::global()->bounded(1000000)),95,2);
+    trans[cc]->Add_Course("Unknown Course "+ QString::number(QRandomGenerator::global()->bounded(1000000)),95,2);
         Update_Transcript();
 }
 
 
 void CalculatorWindow::on_actionAdd_a_2_Credit_89_Score_Course_triggered()
 {
-    trans[cc]->Add_Course("Future Course "+ QString::number(QRandomGenerator::global()->bounded(1000000)),89,2);
+    trans[cc]->Add_Course("Unknown Course "+ QString::number(QRandomGenerator::global()->bounded(1000000)),89,2);
         Update_Transcript();
 }
 
 
 void CalculatorWindow::on_actionAdd_a_3_Credit_89_Score_Course_triggered()
 {
-    trans[cc]->Add_Course("Future Course "+ QString::number(QRandomGenerator::global()->bounded(1000000)),89,3);
+    trans[cc]->Add_Course("Unknown Course "+ QString::number(QRandomGenerator::global()->bounded(1000000)),89,3);
         Update_Transcript();
 }
 
@@ -227,8 +280,12 @@ void CalculatorWindow::on_actionDelete_Transcript_triggered()
 
 void CalculatorWindow::on_Add3_clicked()
 {
-    trans[cc]->Add_Course("Future Course "+ QString::number(QRandomGenerator::global()->bounded(1000000)),ui->ScoreBox->value(),ui->CreditBox->value());
-        Update_Transcript();
+    QString name=ui->plainTextEdit->toPlainText().trimmed().isEmpty()?"Unkown Course":ui->plainTextEdit->toPlainText();
+    if(model[cc]->rowCount() && name==model[cc]->item(model[cc]->rowCount()-1)->text())
+        trans[cc]->Add_Course(name+ QString::number(QRandomGenerator::global()->bounded(1000000)),ui->ScoreBox->value(),ui->CreditBox->value());
+    else
+        trans[cc]->Add_Course(name,ui->ScoreBox->value(),ui->CreditBox->value());
+    Update_Transcript();
 }
 
 
@@ -288,5 +345,30 @@ void CalculatorWindow::on_actionDelete_Course_triggered()
     if(index.row()<0) return;
     trans[cc]->Delete_Course(index.row());
     Update_Transcript();
+}
+
+
+void CalculatorWindow::on_pushButton_3_clicked()
+{
+    QModelIndex index=Tables[cc]->selectionModel()->currentIndex();
+    if(index.row()<0) return;
+    trans[cc]->cor[index.row()].credit=ui->Change_Credit->value();
+    Update_Transcript();
+}
+
+
+void CalculatorWindow::on_pushButton_clicked()
+{
+    QModelIndex index=Tables[cc]->selectionModel()->currentIndex();
+    if(index.row()<0) return;
+    trans[cc]->cor[index.row()].score=ui->Change_Score->value();
+    Update_Transcript();
+}
+
+
+void CalculatorWindow::on_actionSettings_triggered()
+{
+    setting = new SettingWindow();
+    setting->show();
 }
 

@@ -6,47 +6,23 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1418</width>
-    <height>898</height>
+    <width>1312</width>
+    <height>943</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>CalculatorWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_6">
+   <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QSplitter" name="splitter_2">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
-      <property name="handleWidth">
-       <number>0</number>
-      </property>
       <widget class="QSplitter" name="splitter">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="lineWidth">
-        <number>20</number>
-       </property>
-       <property name="midLineWidth">
-        <number>10</number>
-       </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="opaqueResize">
-        <bool>true</bool>
-       </property>
-       <property name="handleWidth">
-        <number>5</number>
-       </property>
-       <property name="childrenCollapsible">
-        <bool>true</bool>
        </property>
        <widget class="QWidget" name="LeftWidget" native="true">
         <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -96,7 +72,7 @@
                 <bool>false</bool>
                </attribute>
                <attribute name="verticalHeaderVisible">
-                <bool>true</bool>
+                <bool>false</bool>
                </attribute>
                <attribute name="verticalHeaderCascadingSectionResizes">
                 <bool>false</bool>
@@ -129,209 +105,295 @@
          </item>
         </layout>
        </widget>
-       <widget class="QWidget" name="RightWidget" native="true">
-        <layout class="QVBoxLayout" name="verticalLayout_5">
-         <item>
-          <layout class="QVBoxLayout" name="verticalLayout_2">
-           <item>
-            <layout class="QGridLayout" name="gridLayout_2">
-             <item row="8" column="1" colspan="2">
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
-               <property name="decimals">
-                <number>1</number>
-               </property>
-               <property name="maximum">
-                <double>100.000000000000000</double>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="0">
-              <widget class="QLabel" name="label_10">
-               <property name="text">
-                <string>Algorithm:</string>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="0">
-              <widget class="QLabel" name="label_5">
-               <property name="text">
-                <string>Credit</string>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="1">
-              <widget class="QDoubleSpinBox" name="CreditBox">
-               <property name="prefix">
-                <string/>
-               </property>
-               <property name="suffix">
-                <string/>
-               </property>
-               <property name="decimals">
-                <number>1</number>
-               </property>
-               <property name="maximum">
-                <double>100.000000000000000</double>
-               </property>
-               <property name="singleStep">
-                <double>0.500000000000000</double>
-               </property>
-               <property name="value">
-                <double>1.000000000000000</double>
-               </property>
-              </widget>
-             </item>
-             <item row="10" column="1">
-              <spacer name="verticalSpacer">
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>20</width>
-                 <height>40</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item row="1" column="0" colspan="3">
-              <widget class="QComboBox" name="comboBox">
-               <property name="editable">
-                <bool>false</bool>
-               </property>
-               <property name="currentIndex">
-                <number>-1</number>
-               </property>
-               <property name="maxCount">
-                <number>100</number>
-               </property>
-               <property name="minimumContentsLength">
-                <number>5</number>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="1">
-              <widget class="QDoubleSpinBox" name="ScoreBox">
-               <property name="decimals">
-                <number>1</number>
-               </property>
-               <property name="value">
-                <double>90.000000000000000</double>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <layout class="QVBoxLayout" name="verticalLayout">
-               <property name="spacing">
-                <number>0</number>
-               </property>
-              </layout>
-             </item>
-             <item row="11" column="1">
-              <widget class="QDoubleSpinBox" name="ScoreBox2">
-               <property name="decimals">
-                <number>1</number>
-               </property>
-               <property name="value">
-                <double>90.000000000000000</double>
-               </property>
-              </widget>
-             </item>
-             <item row="6" column="1" colspan="2">
-              <widget class="QDoubleSpinBox" name="doubleSpinBox">
-               <property name="decimals">
-                <number>1</number>
-               </property>
-               <property name="maximum">
-                <double>100.000000000000000</double>
-               </property>
-               <property name="singleStep">
-                <double>0.500000000000000</double>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="1">
-              <spacer name="verticalSpacer_2">
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-               <property name="sizeType">
-                <enum>QSizePolicy::Minimum</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>20</width>
-                 <height>22</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item row="8" column="0">
-              <widget class="QPushButton" name="pushButton_4">
-               <property name="text">
-                <string>Mark as taken</string>
-               </property>
-              </widget>
-             </item>
-             <item row="5" column="0">
-              <widget class="QPushButton" name="pushButton_2">
-               <property name="text">
-                <string>Mark as Pending</string>
-               </property>
-              </widget>
-             </item>
-             <item row="7" column="0">
-              <widget class="QPushButton" name="pushButton">
-               <property name="text">
-                <string>Change Score</string>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="2" rowspan="2">
-              <widget class="QPushButton" name="Add3">
-               <property name="text">
-                <string>Add</string>
-               </property>
-              </widget>
-             </item>
-             <item row="11" column="0">
-              <widget class="QLabel" name="label_7">
-               <property name="text">
-                <string>Score</string>
-               </property>
-              </widget>
-             </item>
-             <item row="11" column="2">
-              <widget class="QPushButton" name="Retake">
-               <property name="text">
-                <string>Retake</string>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="0">
-              <widget class="QLabel" name="label_6">
-               <property name="text">
-                <string>Score</string>
-               </property>
-              </widget>
-             </item>
-             <item row="7" column="1" colspan="2">
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_3">
-               <property name="decimals">
-                <number>1</number>
-               </property>
-              </widget>
-             </item>
-             <item row="6" column="0">
-              <widget class="QPushButton" name="pushButton_3">
-               <property name="text">
-                <string>Change Credit</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
+       <widget class="QWidget" name="gridLayoutWidget">
+        <layout class="QGridLayout" name="gridLayout_2">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <property name="horizontalSpacing">
+          <number>7</number>
+         </property>
+         <property name="verticalSpacing">
+          <number>0</number>
+         </property>
+         <item row="8" column="1">
+          <spacer name="verticalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Preferred</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>34</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="13" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>Score</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <spacer name="verticalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Preferred</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>32</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="11" column="3">
+          <widget class="QPushButton" name="pushButton_4">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Mark as taken</string>
+           </property>
+          </widget>
+         </item>
+         <item row="13" column="3">
+          <widget class="QPushButton" name="Retake">
+           <property name="text">
+            <string>Retake</string>
+           </property>
+          </widget>
+         </item>
+         <item row="13" column="1">
+          <widget class="QDoubleSpinBox" name="ScoreBox2">
+           <property name="decimals">
+            <number>1</number>
+           </property>
+           <property name="value">
+            <double>90.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_8">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Name:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QDoubleSpinBox" name="CreditBox">
+           <property name="prefix">
+            <string/>
+           </property>
+           <property name="suffix">
+            <string/>
+           </property>
+           <property name="decimals">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <double>100.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.500000000000000</double>
+           </property>
+           <property name="value">
+            <double>1.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0" rowspan="2">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>Score</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>Credit</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="3">
+          <widget class="QPushButton" name="pushButton_2">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Mark as Pending</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="1">
+          <widget class="QDoubleSpinBox" name="Change_Score">
+           <property name="decimals">
+            <number>1</number>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="3">
+          <widget class="QPushButton" name="pushButton_3">
+           <property name="text">
+            <string>Change Credit</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="3">
+          <widget class="QPushButton" name="pushButton">
+           <property name="text">
+            <string>Change Score</string>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="1">
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="decimals">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <double>100.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="1">
+          <widget class="QDoubleSpinBox" name="Change_Credit">
+           <property name="decimals">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <double>100.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.500000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_10">
+           <property name="text">
+            <string>Algorithm:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="comboBox">
+           <property name="editable">
+            <bool>false</bool>
+           </property>
+           <property name="currentIndex">
+            <number>-1</number>
+           </property>
+           <property name="maxCount">
+            <number>100</number>
+           </property>
+           <property name="minimumContentsLength">
+            <number>5</number>
+           </property>
+          </widget>
+         </item>
+         <item row="12" column="1">
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="4" column="1">
+          <widget class="QDoubleSpinBox" name="ScoreBox">
+           <property name="decimals">
+            <number>1</number>
+           </property>
+           <property name="value">
+            <double>90.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Preferred</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>15</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="10" column="1">
+          <spacer name="verticalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Preferred</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>31</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="2" column="3" rowspan="4">
+          <widget class="QPushButton" name="Add3">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Add</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QPlainTextEdit" name="plainTextEdit">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="plainText">
+            <string/>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>
@@ -409,7 +471,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1418</width>
+     <width>1312</width>
      <height>25</height>
     </rect>
    </property>
@@ -440,6 +502,7 @@
      <addaction name="action_English"/>
     </widget>
     <addaction name="menu_language"/>
+    <addaction name="actionSettings"/>
    </widget>
    <widget class="QMenu" name="menu_3">
     <property name="title">
@@ -550,6 +613,12 @@
    </property>
   </action>
   <action name="actionChange__Mode">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Change To Edit Mode</string>
    </property>
@@ -584,6 +653,11 @@
    </property>
    <property name="shortcut">
     <string>Del</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Settings</string>
    </property>
   </action>
  </widget>

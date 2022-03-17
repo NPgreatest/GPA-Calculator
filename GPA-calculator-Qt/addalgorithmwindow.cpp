@@ -9,6 +9,7 @@ AddAlgorithmWindow::AddAlgorithmWindow(QWidget *parent) :
     ui->setupUi(this);
 
     model->clear();
+    ui->Table->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     model->setHorizontalHeaderItem(0, new QStandardItem(QObject::tr("ScoreMin")));
     model->setHorizontalHeaderItem(1, new QStandardItem(QObject::tr("ScoreMax")));
     model->setHorizontalHeaderItem(2, new QStandardItem(QObject::tr("Point")));

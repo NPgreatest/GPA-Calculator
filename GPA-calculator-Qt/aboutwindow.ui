@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>915</width>
-    <height>633</height>
+    <height>640</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -54,7 +54,7 @@
            <enum>QTabWidget::Rounded</enum>
           </property>
           <property name="currentIndex">
-           <number>3</number>
+           <number>0</number>
           </property>
           <property name="documentMode">
            <bool>false</bool>
@@ -94,7 +94,7 @@
              </rect>
             </property>
             <property name="text">
-             <string>38424@sina.com</string>
+             <string>Author's email:38424@sina.com</string>
             </property>
            </widget>
           </widget>
