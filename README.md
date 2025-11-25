@@ -3,7 +3,7 @@
 A lightweight GPA calculator that supports **retake handling**, **political course flags**, and both **command-line** and **Qt GUI** versions.
 
 📘 **中文说明：请参考 README_CN.md**  
-👉 https://github.com/NPgreatest/GPA-Calculator/README_CN.md  
+👉 https://github.com/NPgreatest/GPA-Calculator/blob/Qt-1.2.0-release/README_cn.md 
 
 ---
 

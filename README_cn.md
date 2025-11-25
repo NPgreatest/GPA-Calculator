@@ -3,10 +3,7 @@
 一个轻量的 GPA 计算工具，支持 **重修识别**、**政治课标记**，并提供 **命令行版本** 与 **Qt 图形界面版本**。
 
 🇺🇸 **English README available here:**  
-👉 https://github.com/NPgreatest/GPA-Calculator/README.md  
-（使用时请替换成你真实的仓库链接）
-
-
+👉 https://github.com/NPgreatest/GPA-Calculator/blob/Qt-1.2.0-release/README.md
 
 ---
 
